@@ -52,7 +52,7 @@ try:
 	response = {}
 
 	# Authenticate
-	request = urllib.request.Request(base_url + '/1.0/desktop/authentication', headers=headers, data=bytes(json.dumps(payload), encoding="utf-8"))
+	request = urllib.request.Request(base_url + '/api/1.3/desktop/authentication', headers=headers, data=bytes(json.dumps(payload), encoding="utf-8"))
 	try:
 		resp = urllib.request.urlopen(request, context=ssl_context)
 		jwt_token = json.loads(resp.read())['status']
